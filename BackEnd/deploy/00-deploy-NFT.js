@@ -1,33 +1,28 @@
-const { network, ethers } = require("hardhat");
-const { developmentChains, networkConfig } = require("../helper-hardhat-config")
+const { network } = require("hardhat");
+const { networkConfig, developmentChains } = require("../helper-hardhat-config");
 const { verify } = require("../utils/verify");
-require("dotenv").config()
+require("dotenv").config();
 
-module.exports = async function({ getNamedAccounts, deployments }) {
+module.exports = async(hre) => {
+    const { getNamedAccounts, deployments } = hre;
     const { deploy, log } = deployments;
     const { deployer } = await getNamedAccounts();
+    const chainId = network.config.chainId;
 
-    const args = [];
+    const args = []
     const NFTIsERC721A = await deploy("NFTIsERC721A", {
         from: deployer,
-        args: args,
-        gasLimit: 4000000,
+        args: args, //price feed address,
         log: true,
-        waitConfirmations: 6,
+        waitConfirmations: network.config.blockConfirmations || 1
     })
 
-    if(developmentChains.includes(network.name)) {
-        const NFTIsERC721A = await ethers.getContract(
-            "NFTIsERC721A"
-        );
-        log(`Contract address : ${NFTIsERC721A.address}`)
-    }
-
+    //We don't want to verify on a local network
     if(!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
-        log("Verifying")
         await verify(NFTIsERC721A.address, args);
     }
-    log("------------------------------------");
+
+    log("----------------------------");
 }
 
-module.exports.tags = ["all", "nft"];
+module.exports.tags = ["all", "NFTIsERC721A"]
