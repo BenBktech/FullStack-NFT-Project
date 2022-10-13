@@ -1,0 +1,18 @@
+BackEnd/node_modules
+BackEnd/node_modules
+.env
+BackEnd/node_modules
+coverage
+BackEnd/node_modules
+coverage.json
+BackEnd/node_modules
+typechain
+BackEnd/node_modules
+typechain-types
+
+#Hardhat files
+BackEnd/node_modules
+cache
+BackEnd/node_modules
+artifacts
+
