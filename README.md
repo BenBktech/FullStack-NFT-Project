@@ -6,7 +6,7 @@
 
 #### To launch a hardhat node
 ```
---no-deploy
+yarn hardhat node --no-deploy
 ```
 #### To deploy on hardhat local Blockchain
 ```
