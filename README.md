@@ -3,8 +3,14 @@
 ## Deploy the smart contract
 
 ### On Hardhat local Blockchain
+
+#### To launch a hardhat node
 ```
-yarn hardhat deploy
+--no-deploy
+```
+#### To deploy on hardhat local Blockchain
+```
+yarn hardhat deploy --network localhost
 ```
 ### On Goerli Testnet
 ```

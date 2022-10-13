@@ -11,6 +11,7 @@ require("dotenv").config()
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
+const REPORT_GAS = process.env.REPORT_GAS;
 
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
@@ -18,7 +19,6 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       chainId: 31337,
-      blockConfirmations: 1,
     },
     goerli: {
       chainId: 5,
@@ -28,8 +28,8 @@ const config: HardhatUserConfig = {
     }
   },
   gasReporter: {
-    enabled: false,
-    outputFile: "gas-report.txt",
+    enabled: REPORT_GAS,
+    //outputFile: "gas-report.txt",
   },
   solidity: "0.8.17",
   namedAccounts: {
