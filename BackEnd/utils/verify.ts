@@ -1,6 +1,6 @@
 const { run } = require("hardhat");
 
-const verify = async(contractAddress, args) => {
+const verify = async(contractAddress: string, args: any[]) => {
     console.log("Verifying the smart contract...");
     try {
       await run("verify:verify", {
@@ -8,7 +8,7 @@ const verify = async(contractAddress, args) => {
         constructorArguments: args
       });
     }
-    catch(e) {
+    catch(e: any) {
       if(e.message.toLowerCase().includes("already verified")) {
         console.log("Already Verified");
       } else {

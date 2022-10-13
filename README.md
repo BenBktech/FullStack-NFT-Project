@@ -19,6 +19,29 @@ yarn hardhat deploy --network goerli
 
 ## Tips 
 
+### Using type script to make tests 
+
+First, put this line in the hardhat.config.ts file 
+
+```
+import "@typechain/hardhat";
+```
+
+Then, type in the terminal
+
+```
+import "yarn hardhat typechain";
+```
+
+Which will create a new folder named "typechain-types".
+
+Then in your test files, import the types like this : 
+```
+import { SimpleStorage, SimpleStorage__factory } from "../typechain-types"
+```
+
+### Installation of dependencies
+
 You don't need to know this if you only do a "npm install" to run the project.
 
 BUT, if you create the project from scratch, it's important to do a :

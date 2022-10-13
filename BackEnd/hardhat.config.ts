@@ -1,12 +1,12 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-//require("@nomiclabs/hardhat-waffle")
-require("@nomiclabs/hardhat-etherscan")
-require("hardhat-deploy")
-require("solidity-coverage")
-require("hardhat-gas-reporter")
-require("hardhat-contract-sizer")
-require("dotenv").config()
+import "@nomiclabs/hardhat-etherscan"
+import "hardhat-deploy"
+import "solidity-coverage"
+import "hardhat-gas-reporter"
+import "hardhat-contract-sizer"
+import "dotenv/config"
+import "@typechain/hardhat";
 
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
