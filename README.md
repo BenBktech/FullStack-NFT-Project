@@ -17,7 +17,11 @@ yarn hardhat deploy --network localhost
 yarn hardhat deploy --network goerli
 ```
 
-Firstly, it's important to do a :
+## Tips 
+
+You don't need to know this if you only do a "npm install" to run the project.
+
+BUT, if you create the project from scratch, it's important to do a :
 npm i -D @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers
 Recently hardhat team made @nomiclabs/hardhat-ethers itself extensible so my plan is to update hardhat-deploy-ethers to extend it instead of being a fork of it. No timeline yet though.
 
