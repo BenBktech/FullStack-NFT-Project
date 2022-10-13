@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -13,7 +14,7 @@ contract NFTIsERC721A is ERC721A {
     using Strings for uint;
 
     uint256 private constant S_PRICE = 0.01 ether;
-    uint256 private constant S_NUMBER_OF_NFTS = 300;
+    uint256 private constant S_NUMBER_OF_NFTS = 30;
     uint256 private s_saleStartTime = 4234234;
     address private immutable i_owner;
     string private s_baseURI;
@@ -71,5 +72,9 @@ contract NFTIsERC721A is ERC721A {
 
     function getBaseURI() public view returns(string memory) {
         return s_baseURI;
+    }
+
+    function getOwner() public view returns(address) {
+        return i_owner;
     }
 }

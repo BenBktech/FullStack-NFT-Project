@@ -11,6 +11,7 @@ module.exports = async function({ getNamedAccounts, deployments }) {
     const NFTIsERC721A = await deploy("NFTIsERC721A", {
         from: deployer,
         args: args,
+        gasLimit: 4000000,
         log: true,
         waitConfirmations: 6,
     })
