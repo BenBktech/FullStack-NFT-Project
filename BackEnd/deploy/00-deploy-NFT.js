@@ -9,7 +9,7 @@ module.exports = async(hre) => {
     const { deployer } = await getNamedAccounts();
     const chainId = network.config.chainId;
 
-    const args = []
+    const args = ["ipfs://CID/"]
     const NFTIsERC721A = await deploy("NFTIsERC721A", {
         from: deployer,
         args: args, //price feed address,
