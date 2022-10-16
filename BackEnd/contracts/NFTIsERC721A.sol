@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
+// @author Ben BK https://twitter.com/BenBKTech
+// @version V1.0.0
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "./ERC721A.sol";
 

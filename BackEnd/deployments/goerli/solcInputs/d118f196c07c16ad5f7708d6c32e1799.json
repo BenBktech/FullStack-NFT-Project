@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/NFTIsERC721A.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.17;\r\n\r\ncontract NFTIsERC721A {\r\n\r\n    string test = \"ok\";\r\n\r\n    constructor(string memory _test) {\r\n        test = _test;\r\n    }\r\n}\r\n\r\n// @author Ben BK https://twitter.com/BenBKTech\r\n// import \"@openzeppelin/contracts/utils/Strings.sol\";\r\n// import \"./ERC721A.sol\";\r\n\r\n// error NFTIsERC721A_NotOwner();\r\n// error NFTIsERC721A_OnlyIfYouMint();\r\n// error NFTIsERC721A_SupplyExceeded();\r\n// error NFTIsERC721A_NftsWalletExceeded();\r\n// error NFTIsERC721A_NotEnoughFunds();\r\n// error NFTIsERC721A_QueryForNonExistentToken();\r\n\r\n// contract NFTIsERC721A is ERC721A {\r\n//     using Strings for uint;\r\n\r\n//     uint256 private constant PRICE = 0.01 ether;\r\n//     uint256 private constant NUMBER_OF_NFTS = 5;\r\n//     address private immutable i_owner;\r\n//     string private baseURI;\r\n\r\n//     mapping(address => uint) public amountNFTsPerWallet;\r\n//     uint private constant NUMBER_OF_NFTS_PER_WALLET = 3;\r\n\r\n//     modifier onlyOwner() {\r\n//         if(msg.sender != i_owner) {\r\n//             revert NFTIsERC721A_NotOwner();\r\n//         }\r\n//         _;\r\n//     }\r\n\r\n//     constructor(string memory _baseURI) ERC721A(\"Ben BK\", \"BBK\") {\r\n//        i_owner = msg.sender;\r\n//        baseURI = _baseURI;\r\n//     }\r\n\r\n//     function publicMint(uint256 quantity) external payable {\r\n//         uint price = getPrice();\r\n//         if(totalSupply() + quantity > NUMBER_OF_NFTS) {\r\n//             revert NFTIsERC721A_SupplyExceeded();\r\n//         }\r\n//         if(amountNFTsPerWallet[msg.sender] + quantity > NUMBER_OF_NFTS_PER_WALLET) {\r\n//             revert NFTIsERC721A_NftsWalletExceeded();\r\n//         }\r\n//         if(msg.value < price * quantity) {\r\n//             revert NFTIsERC721A_NotEnoughFunds();\r\n//         }\r\n//         amountNFTsPerWallet[msg.sender] += quantity;\r\n//         _safeMint(msg.sender, quantity);\r\n//     }\r\n\r\n//     function setBaseURI(string memory _baseURI) external onlyOwner {\r\n//         baseURI = _baseURI;\r\n//     }\r\n\r\n//     function tokenURI(uint _tokenId) public view virtual override returns (string memory) {\r\n//         if(!_exists(_tokenId)) {\r\n//             revert NFTIsERC721A_QueryForNonExistentToken();\r\n//         }\r\n\r\n//         return string(abi.encodePacked(baseURI, _tokenId.toString(), \".json\"));\r\n//     }\r\n\r\n//     function getPrice() public pure returns(uint) {\r\n//         return PRICE;\r\n//     }\r\n\r\n//     function getBaseURI() public view returns(string memory) {\r\n//         return baseURI;\r\n//     }\r\n\r\n//     function getOwner() public view returns(address) {\r\n//         return i_owner;\r\n//     }\r\n// }"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
