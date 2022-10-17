@@ -30,7 +30,7 @@ import "@typechain/hardhat";
 Then, type in the terminal
 
 ```
-import "yarn hardhat typechain";
+yarn hardhat typechain
 ```
 
 Which will create a new folder named "typechain-types".
